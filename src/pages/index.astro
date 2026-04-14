@@ -1,0 +1,299 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hello World | Future Build">
+	<main class="home">
+		<div class="ambient ambient-cyan"></div>
+		<div class="ambient ambient-lime"></div>
+		<div class="grid"></div>
+
+		<section class="hero">
+			<p class="eyebrow">Developer mode enabled</p>
+			<h1>Hello World</h1>
+			<p class="lead">
+				Hello, I am Nicolas. I build software solutions with a mindset of continuous
+				improvement, combining thoughtful engineering and artificial intelligence to create
+				systems that grow stronger, smarter and more useful over time.
+			</p>
+
+			<div class="actions">
+				<a href="#manifesto" class="button button-primary">Start building</a>
+				<a href="#signals" class="button button-secondary">Read the system</a>
+			</div>
+		</section>
+
+		<section id="signals" class="signals">
+			<article class="signal-card">
+				<span class="signal-label">Vision</span>
+				<h2>Progress through balanced systems</h2>
+				<p>
+					Real improvement comes from adapting the new power of artificial intelligence while
+					keeping strong foundations, solid software design and clean workflows.
+				</p>
+			</article>
+
+			<article class="signal-card">
+				<span class="signal-label">Intelligence</span>
+				<h2>Big data with business value</h2>
+				<p>
+					Data at scale becomes strategic when it reveals behavior, patterns and opportunities
+					that support better professional and commercial decisions.
+				</p>
+			</article>
+
+			<article class="signal-card">
+				<span class="signal-label">Fortitude</span>
+				<h2>Insights that improve everything</h2>
+				<p>
+					The real strength of data is turning analysis into action, improving processes,
+					performance and outcomes across teams, services and business operations.
+				</p>
+			</article>
+		</section>
+
+		<section id="manifesto" class="manifesto">
+			<p class="manifesto-copy">
+				Choose software solutions that challenge old limits, transform business reality and turn
+				obstacles into the starting point for a stronger, smarter future.
+			</p>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	:global(body) {
+		font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+		background:
+			radial-gradient(circle at top left, rgba(109, 195, 255, 0.22), transparent 30%),
+			radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 22%),
+			radial-gradient(circle at bottom left, rgba(255, 211, 77, 0.12), transparent 26%),
+			linear-gradient(180deg, #06111b 0%, #0d1d2d 48%, #05080f 100%);
+		color: #f5fff9;
+	}
+
+	.home {
+		position: relative;
+		min-height: 100vh;
+		overflow: hidden;
+		padding: 4rem 1.5rem 3rem;
+	}
+
+	.ambient {
+		position: absolute;
+		border-radius: 999px;
+		filter: blur(90px);
+		opacity: 0.9;
+		pointer-events: none;
+	}
+
+	.ambient-cyan {
+		top: 4rem;
+		right: -4rem;
+		width: 18rem;
+		height: 18rem;
+		background: rgba(112, 204, 255, 0.3);
+		animation: drift 10s ease-in-out infinite;
+	}
+
+	.ambient-lime {
+		left: -5rem;
+		bottom: 6rem;
+		width: 22rem;
+		height: 22rem;
+		background: rgba(255, 214, 82, 0.16);
+		animation: drift 14s ease-in-out infinite reverse;
+	}
+
+	.grid {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(164, 220, 255, 0.08) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(164, 220, 255, 0.08) 1px, transparent 1px);
+		background-size: 4.5rem 4.5rem;
+		mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), transparent 80%);
+		pointer-events: none;
+	}
+
+	.hero,
+	.signals,
+	.manifesto {
+		position: relative;
+		z-index: 1;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.hero {
+		padding-top: 10vh;
+		animation: rise 0.9s ease-out both;
+	}
+
+	.eyebrow {
+		display: inline-flex;
+		margin: 0 0 1.25rem;
+		padding: 0.45rem 0.8rem;
+		border: 1px solid rgba(153, 220, 255, 0.28);
+		border-radius: 999px;
+		background: rgba(9, 19, 31, 0.62);
+		color: #ccefff;
+		font-size: 0.85rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 0;
+		max-width: 8ch;
+		font-family: 'Arial Black', 'Segoe UI', sans-serif;
+		font-size: clamp(4rem, 12vw, 8.5rem);
+		line-height: 0.9;
+		letter-spacing: -0.06em;
+		text-transform: uppercase;
+	}
+
+	.lead {
+		margin: 1.5rem 0 0;
+		max-width: 38rem;
+		color: rgba(227, 255, 244, 0.84);
+		font-size: clamp(1.05rem, 2vw, 1.35rem);
+		line-height: 1.65;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 2.2rem;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.95rem 1.35rem;
+		border-radius: 999px;
+		border: 1px solid transparent;
+		font-weight: 600;
+		text-decoration: none;
+		transition:
+			transform 0.2s ease,
+			border-color 0.2s ease,
+			background 0.2s ease;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button-primary {
+		background: linear-gradient(135deg, #ffffff 0%, #82d8ff 48%, #63bfff 100%);
+		color: #041018;
+		box-shadow: 0 18px 60px rgba(99, 191, 255, 0.22);
+	}
+
+	.button-secondary {
+		border-color: rgba(177, 228, 255, 0.28);
+		background: rgba(255, 255, 255, 0.03);
+		color: #edfff8;
+	}
+
+	.signals {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		margin-top: 5rem;
+		animation: rise 1.1s ease-out both;
+		animation-delay: 0.15s;
+	}
+
+	.signal-card {
+		padding: 1.35rem;
+		border: 1px solid rgba(160, 223, 255, 0.16);
+		border-radius: 1.4rem;
+		background: linear-gradient(180deg, rgba(11, 23, 36, 0.92), rgba(9, 16, 25, 0.76));
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+		backdrop-filter: blur(18px);
+	}
+
+	.signal-label {
+		display: inline-block;
+		margin-bottom: 1rem;
+		color: #8ed7ff;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.signal-card h2 {
+		margin: 0 0 0.8rem;
+		font-size: 1.25rem;
+		line-height: 1.2;
+	}
+
+	.signal-card p {
+		margin: 0;
+		color: rgba(226, 255, 245, 0.72);
+		line-height: 1.65;
+	}
+
+	.manifesto {
+		margin-top: 4rem;
+		padding-bottom: 2rem;
+	}
+
+	.manifesto-copy {
+		max-width: 42rem;
+		margin: 0;
+		padding-left: 1.2rem;
+		border-left: 3px solid #82d8ff;
+		color: rgba(235, 255, 247, 0.92);
+		font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+		line-height: 1.5;
+	}
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(18px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes drift {
+		0%,
+		100% {
+			transform: translate3d(0, 0, 0) scale(1);
+		}
+
+		50% {
+			transform: translate3d(0, 18px, 0) scale(1.06);
+		}
+	}
+
+	@media (max-width: 900px) {
+		.signals {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.home {
+			padding-top: 2rem;
+		}
+
+		.hero {
+			padding-top: 6vh;
+		}
+
+		.manifesto {
+			margin-top: 3rem;
+		}
+	}
+</style>
